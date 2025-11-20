@@ -1,7 +1,10 @@
 import smtplib
 import ssl
 import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, request, flash, redirect, url_for
+
+load_dotenv("env.config")
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'dev_key_portfolio_2025')
