@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 style="text-align: center; font-size: 3rem; margin-bottom: 3rem;">Technical <span
+            style="background-color: var(--neon-green); padding: 0 10px;">Skills</span></h2>
+
+    <div class="skills-container">
+        {% for skill in skills %}
+        <div class="skill-badge">{{ skill }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

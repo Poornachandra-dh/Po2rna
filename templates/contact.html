@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div style="max-width: 600px; margin: 0 auto;">
+        <h2 style="text-align: center; font-size: 3rem; margin-bottom: 2rem;">Get In <span
+                style="background-color: var(--neon-green); padding: 0 10px;">Touch</span></h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div style="padding: 1rem; margin-bottom: 1rem; border: var(--border-thick) solid var(--black); font-weight: bold; 
+                        background-color: {{ 'var(--neon-green)' if category == 'success' else '#ff4444' }};
+                        color: var(--black);">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('contact') }}" method="post"
+            style="border: var(--border-thick) solid var(--black); padding: 2rem; background-color: var(--white); box-shadow: 10px 10px 0 var(--neon-green), 10px 10px 0 4px var(--black);">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

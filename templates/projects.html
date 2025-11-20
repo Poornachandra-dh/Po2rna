@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 style="text-align: center; font-size: 3rem; margin-bottom: 3rem;">My <span
+            style="background-color: var(--neon-green); padding: 0 10px;">Projects</span></h2>
+
+    <div class="grid">
+        {% for project in projects %}
+        <div class="card">
+            <div>
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+            </div>
+            <div class="tags">
+                {% for tag in project.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
