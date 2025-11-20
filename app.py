@@ -2,12 +2,15 @@ import smtplib
 import ssl
 import os
 from dotenv import load_dotenv
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
 
 load_dotenv("env.config")
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'dev_key_portfolio_2025')
+
+# Assets
+RESUME_FILENAME = "resume_update_1.pdf"
 
 # Data for the portfolio
 PROJECTS = [
@@ -100,6 +103,14 @@ def contact():
             flash("Failed to send message. Please try again.", "error")
             
     return render_template('contact.html')
+
+@app.route('/resume')
+def download_resume():
+    resume_path = os.path.join(app.root_path, RESUME_FILENAME)
+    if os.path.exists(resume_path):
+        return send_from_directory(app.root_path, RESUME_FILENAME, as_attachment=True)
+    flash("Resume file is missing. Please check back later.", "error")
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
