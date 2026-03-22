@@ -15,9 +15,9 @@ RESUME_FILENAME = "resume_update_1.pdf"
 # Data for the portfolio
 PROJECTS = [
     {
-        "title": "Sentiment Analysis",
-        "description": "Analyzed customer reviews to determine sentiment polarity using NLP techniques.",
-        "tags": ["Python", "NLP", "Scikit-Learn"]
+        "title": "Myntra_scrapper",
+        "description": "web scraping application designed to extract and analyze customer reviews from the Myntra e-commerce platform",
+        "tags": ["Python", "ML", "Scikit-Learn"]
     },
     {
         "title": "Phishing Classifier",
@@ -25,32 +25,44 @@ PROJECTS = [
         "tags": ["Python", "ML", "Pandas"]
     },
     {
-        "title": "Crop Disease Detection",
-        "description": "Computer vision model to identify diseases in crops from leaf images.",
-        "tags": ["Deep Learning", "TensorFlow", "CNN"]
+        "title": "Climate_visibility",
+        "description": "To develop a machine learning model that can accurately predict the maximum visibility distance in a given location and weather condition.",
+        "tags": ["Flask", "K-Means", "Logistic Reg", "Scikit-Learn"]
     },
     {
-        "title": "Child Birth Weight Prediction",
-        "description": "Predictive model to estimate birth weight based on maternal health data.",
-        "tags": ["Data Science", "Regression", "Healthcare"]
+        "title": "ResearchLens",
+        "description": "research paper analysis tool that lets you upload any academic paper and interact with it through 4 specialized analysis modes",
+        "tags": ["Flask", "LLM", "LangChain" , "RAG" , "Supabase"]
     },
     {
-        "title": "Personal AI Assistant",
-        "description": "Voice-activated AI assistant capable of performing daily tasks and answering queries.",
-        "tags": ["AI", "Speech Recognition", "API Integration"]
+        "title": "Personal Angry AI Assistant",
+        "description": "Angry AI assistant capable of performing daily tasks and answering queries.",
+        "tags": ["AI", "LangChain", "API Integration" , "AngryAI"]
     },
     {
-        "title": "Market-Cap Crop Dashboard",
-        "description": "Interactive dashboard visualizing crop market trends and capitalization.",
-        "tags": ["Power BI", "Data Viz", "Analytics"]
-    }
+        "title": "Brain Tumor Detection",
+        "description": "A deep learning–powered web application for brain tumor segmentation using YOLOv11n.",
+        "tags": ["Flask", "YOLOv11n", "Deep learning" ,"Computer Vision"]
+    },
+    {
+        "title": "Helmet Detection",
+        "description": "Real-time helmet detection using YOLOv8 for industrial safety applications.",
+        "tags": ["YOLOv8", "Computer-Vision", "Deep Learning"]
+    },
+    {
+        "title": "Customer_category",
+        "description": "Categoring the customers based on their purchase history and demographics",
+        "tags": ["Clustering", "ML", "Python"]
+    },
+    
 ]
 
 SKILLS = [
     "Python", "Pandas", "NumPy", "SQL", "Machine Learning", 
     "Deep Learning", "NLP", "Generative AI", "Scikit-Learn", 
     "Data Visualization", "MongoDB", "Docker", "Kubernetes", 
-    "MLOps", "Power BI", "GitHub"
+    "MLOps", "Power BI", "GitHub" , "Computer Vision" , "LLM" , 
+    "HuggingFace","LangChain" , "Flask"
 ]
 
 @app.route('/')
